@@ -71,6 +71,26 @@ margin:10px;
         background: #0055d5;
     }
 
+.container-game-players {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.container-game-players > div{
+    display: flex;
+    flex-direction: column;
+}
+.container-game-cards {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.card{
+    margin:20px;
+}
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

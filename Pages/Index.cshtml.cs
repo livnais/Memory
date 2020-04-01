@@ -13,13 +13,6 @@ namespace Memory.Pages
         {
 
         }
-
-        public void OnPostWay2(string button)
-        {
-            ViewData["result"] = button;
-            System.Diagnostics.Debug.WriteLine(button);
-   
-        }
     
     }
 }

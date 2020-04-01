@@ -1,0 +1,29 @@
+﻿@page
+@model Memory.Pages.MainGameModel
+@{
+    ViewData["Title"] = "Game";
+}
+
+<div>
+    <span class="title-memory">@ViewData["Title"]</span>
+        <div class="container-game-players">
+            <div>
+                <img width="50px" src="~/images/playerActif.svg" />
+                <span>  @Html.DisplayFor(model => model.ScorePartie.Player1)</span>
+                <span>0 point(s)</span>
+            </div>
+            <div>
+                <img width="50px" src="~/images/playerNotActif.svg" />
+                <span> @Html.DisplayFor(model => model.ScorePartie.Player2)</span>
+                <span>0 point(s)</span>
+            </div>
+        </div>
+        <div class="container-game-cards">
+         @foreach (var item in Model.Carte) {
+                     var image = item.FindBy!=null ? item.Image :"card.svg" ;
+            <div id="@item.ID" class="card"> <a asp-page="./mainGame" asp-route-id="@item.ID"> <img width="100px" src="~/images/@image" /></a></div>
+    }
+</div>
+
+</div>
+

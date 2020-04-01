@@ -1,0 +1,45 @@
+﻿@page
+@model Memory.Pages.CarteDB.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Carte</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+            <div class="form-group">
+                <label asp-for="Carte.Image" class="control-label"></label>
+                <input asp-for="Carte.Image" class="form-control" />
+                <span asp-validation-for="Carte.Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carte.FindBy" class="control-label"></label>
+                <input asp-for="Carte.FindBy" class="form-control" />
+                <span asp-validation-for="Carte.FindBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carte.PartieId" class="control-label"></label>
+                <input asp-for="Carte.PartieId" class="form-control" />
+                <span asp-validation-for="Carte.PartieId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

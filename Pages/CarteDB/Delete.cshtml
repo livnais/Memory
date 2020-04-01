@@ -1,0 +1,41 @@
+﻿@page
+@model Memory.Pages.CarteDB.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Carte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+ 
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.FindBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.FindBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.PartieId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.PartieId)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Carte.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

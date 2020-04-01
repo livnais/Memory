@@ -1,0 +1,46 @@
+﻿@page
+@model Memory.Pages.PartieDB.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Partie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Partie.NumberCards)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partie.NumberCards)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Partie.StateGame)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partie.StateGame)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Partie.TournToPlay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partie.TournToPlay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Partie.CreateAt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Partie.CreateAt)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Partie.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

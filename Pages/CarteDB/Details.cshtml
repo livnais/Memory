@@ -1,0 +1,38 @@
+﻿@page
+@model Memory.Pages.CarteDB.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Carte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+ 
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.FindBy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.FindBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carte.PartieId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carte.PartieId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Carte.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

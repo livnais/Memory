@@ -9,10 +9,12 @@ namespace Memory.Models
     public class Partie
     {
         public int ID { get; set; }
+        public int NumberCards { get; set; }
         public string StateGame { get; set; }
         public string TournToPlay { get; set; }
-        public int NumberCards { get; set; }
         [DataType(DataType.Date)]
         public DateTime CreateAt { get; set; }
+
+  
     }
 }

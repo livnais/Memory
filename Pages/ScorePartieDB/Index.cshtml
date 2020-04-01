@@ -1,0 +1,66 @@
+﻿@page
+@model Memory.Pages.ScorePartieDB.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].Winner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].Player1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].Player2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].ScorePlayer1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].ScorePlayer2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScorePartie[0].PartieId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ScorePartie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Winner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScorePlayer1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScorePlayer2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartieId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
