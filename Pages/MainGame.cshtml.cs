@@ -15,7 +15,8 @@ namespace Memory.Pages
         public ScorePartie ScorePartie { get; set; }
         public IList<Carte> Carte { get; set; }
         public string NameCard;
-        public int id { get; set; }
+        public int idCard1 { get; set; }
+        public int idCard2 { get; set; }
         private readonly MemoryContext _context;
 
         public MainGameModel(MemoryContext context)
@@ -25,8 +26,18 @@ namespace Memory.Pages
 
         public async Task OnGetAsync(int id)
         {
-            if (id != null && Carte!=null)
+            if (id != 0)
             {
+                if (idCard1 != 0)
+                {
+                    idCard2 = id;
+                    idCard1 = 0;
+                }
+                else 
+                {
+                    idCard1 = id;
+                }
+               
             }
             int PartieID = 21;
             Partie = await _context.Partie.FirstOrDefaultAsync(m => m.ID == PartieID);

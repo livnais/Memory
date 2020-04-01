@@ -20,8 +20,8 @@
         </div>
         <div class="container-game-cards">
          @foreach (var item in Model.Carte) {
-                     var image = item.FindBy!=null ? item.Image :"card.svg" ;
-            <div id="@item.ID" class="card"> <a asp-page="./mainGame" asp-route-id="@item.ID"> <img width="100px" src="~/images/@image" /></a></div>
+             var image = item.ID==Model.idCard1 || item.ID == Model.idCard2 ? item.Image :"card.svg" ;
+            <div id="@item.ID" class="card"> <a asp-page="./mainGame" asp-route-id="@item.ID" asp-route-idcard1="@Model.idCard1" asp-route-idcard2="@Model.idCard2" > <img width="100px" src="~/images/@image" /></a></div>
     }
 </div>
 
