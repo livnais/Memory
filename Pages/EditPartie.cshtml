@@ -1,0 +1,28 @@
+﻿@page
+@model Memory.Pages.EditPartieModel
+@{
+    ViewData["Title"] = "CREER UNE PARTIE";
+}
+
+<div>
+    <span class="title-memory">@ViewData["Title"]</span>
+    <form>
+        <div class="container-menu-button">
+            <input placeholder="Entrer le nom du joueur 1" type="text" asp-for="Player1" />
+            <input placeholder="Entrer le nom du joueur 2" type="text" asp-for="Player2" />
+            Nombre de carte <select asp-for="NumberCards">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+            </select>
+
+            <input type="submit" class="btn btn-primary" value="Lancer" />
+        </div>
+    </form>
+</div>

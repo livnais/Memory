@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 182 122" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Plan-de-travail1" serif:id="Plan de travail1" x="0" y="0" width="182" height="122" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Plan-de-travail11" serif:id="Plan de travail1" x="0" y="0" width="182" height="122"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="card" transform="matrix(0.542074,-0.168579,0.169042,0.540591,45.5,61)">
+            <g transform="matrix(1,0,0,1,-54,-96)">
+                <clipPath id="_clip2">
+                    <rect x="0" y="0" width="108" height="192"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <rect id="Plan-de-travail12" serif:id="Plan de travail1" x="0" y="0" width="108" height="192" style="fill:none;"/>
+                    <g id="Plan-de-travail13" serif:id="Plan de travail1">
+                        <path d="M108,14.08C108,6.309 101.691,0 93.92,0L14.08,0C6.309,0 0,6.309 0,14.08L0,177.92C0,185.691 6.309,192 14.08,192L93.92,192C101.691,192 108,185.691 108,177.92L108,14.08Z" style="fill:rgb(104,176,246);"/>
+                        <g transform="matrix(0.460215,0,0,0.460215,1.33684,0.65693)">
+                            <g transform="matrix(1,0,0,1,13.313,55.022)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">ME</text>
+                            </g>
+                            <g transform="matrix(1,0,0,1,13.313,98.108)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">MO</text>
+                            </g>
+                            <g>
+                                <g transform="matrix(1,0,0,1,13.313,141.194)">
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">R</text>
+                                </g>
+                                <g transform="matrix(1,0,0,1,41.895,141.194)">
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">Y</text>
+                                </g>
+                            </g>
+                        </g>
+                        <g transform="matrix(0.460215,0,0,-0.460215,63.887,192.255)">
+                            <g transform="matrix(1,0,0,1,13.313,55.022)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">ME</text>
+                            </g>
+                            <g transform="matrix(1,0,0,1,13.313,98.108)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">MO</text>
+                            </g>
+                            <g>
+                                <g transform="matrix(1,0,0,1,13.313,141.194)">
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">R</text>
+                                </g>
+                                <g transform="matrix(1,0,0,1,41.895,141.194)">
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">Y</text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="card1" serif:id="card" transform="matrix(0.542001,0.168814,-0.167592,0.541042,136.357,60.944)">
+            <g transform="matrix(1,0,0,1,-54,-96)">
+                <rect id="Plan-de-travail14" serif:id="Plan de travail1" x="0" y="0" width="108" height="192" style="fill:none;"/>
+                <g id="Plan-de-travail15" serif:id="Plan de travail1">
+                    <path d="M108,14.08C108,6.309 101.691,0 93.92,0L14.08,0C6.309,0 0,6.309 0,14.08L0,177.92C0,185.691 6.309,192 14.08,192L93.92,192C101.691,192 108,185.691 108,177.92L108,14.08Z" style="fill:rgb(104,176,246);"/>
+                    <g transform="matrix(0.460215,0,0,0.460215,1.33684,0.65693)">
+                        <g transform="matrix(1,0,0,1,13.313,55.022)">
+                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">ME</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,13.313,98.108)">
+                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">MO</text>
+                        </g>
+                        <g>
+                            <g transform="matrix(1,0,0,1,13.313,141.194)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">R</text>
+                            </g>
+                            <g transform="matrix(1,0,0,1,41.895,141.194)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">Y</text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="matrix(0.460215,0,0,-0.460215,63.887,192.255)">
+                        <g transform="matrix(1,0,0,1,13.313,55.022)">
+                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">ME</text>
+                        </g>
+                        <g transform="matrix(1,0,0,1,13.313,98.108)">
+                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">MO</text>
+                        </g>
+                        <g>
+                            <g transform="matrix(1,0,0,1,13.313,141.194)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">R</text>
+                            </g>
+                            <g transform="matrix(1,0,0,1,41.895,141.194)">
+                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:41.721px;fill:white;">Y</text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
