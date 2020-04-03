@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,9 @@ namespace Memory.Models
         public string Player2 { get; set; }
         public int ScorePlayer1 { get; set; }
         public int ScorePlayer2 { get; set; }
+
+        [ForeignKey("Partie")]
+        [Column(Order = 1)]
         public int PartieId { get; set; }
     }
 }

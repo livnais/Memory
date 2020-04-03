@@ -1,7 +1,7 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -44,30 +44,30 @@ width:200px;
 margin:10px;
 }
 
-.container-menu-button {
+.container-menu-input {
     display: flex;
     flex-direction: column;
 }
-.container-menu-button > input[type="submit"] {
+.container-menu-input > input[type="submit"] {
         background: #0094ff;
         max-width: 170px;
         font-weight: bold;
         margin-top: 30px;
         border: none;
     }
-    .container-menu-button > input[type="text"] {
+    .container-menu-input > input[type="text"] {
         width: 200px;
         margin-top: 10px;
         margin-bottom: 10px;
         padding: 5px;
         border-radius: 5px;
     }
-    .container-menu-button > select{
+    .container-menu-input > select{
         width:200px;
         margin-top:5px;
    
     }
-    .container-menu-button > input[type="submit"]:hover {
+    .container-menu-input > input[type="submit"]:hover {
         background: #0055d5;
     }
 
@@ -85,12 +85,42 @@ margin:10px;
 }
 .container-game-cards {
     display: grid;
-    max-width: 600px;
-    grid-template-columns: repeat(4, 1fr);
+    max-width: 500px;
+    grid-template-columns: repeat(4,1fr);
 }
 .card{
-    margin:20px;
+    margin:10px;
+   
 }
+.content-item-game {
+    margin-top: 50px;
+}
+
+.item-game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:20px;
+    padding: 15px 20px 10px 20px;
+    background: #f3f3f3;
+}
+.item-game-info{
+   display:flex;
+   flex-direction:column;
+   text-align:left;
+}
+item-game-input{
+     display:flex;
+     flex-direction:row;
+}
+.item-game-info-create {
+    color:#808080;
+}
+.item-game-info-name{
+    font-weight:bold;
+    font-size:15px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

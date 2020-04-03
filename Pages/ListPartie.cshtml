@@ -1,8 +1,28 @@
 ﻿@page
 @model Memory.Pages.ListPartieModel
 @{
-    ViewData["Title"] = "ListPartie";
+    ViewData["Title"] = "Partie en cours";
 }
+<div>
+<span class="title-memory">@ViewData["Title"]</span>
+<div class="content-item-game">
+    @foreach(var item in Model.Partie)
+        {
+    <div class="item-game">
+        <div class="item-game-info">
+            <span class="item-game-info-create">Créé le @item.CreateAt</span>
+            <span class="item-game-info-name">Theo contre Martin</span>
+        </div>
+        <form method="post">
+        <div class="item-game-input">
+            <input type="submit"  asp-route-PartieId="@item.ID" asp-route-actionType="1" class="btn btn-primary" value="Reprendre" />
+            <input type="submit"  asp-route-PartieId="@item.ID" asp-route-actionType="0" class="btn btn-danger" value="Supprimer" />
+        </div>
+        </form>
+    </div>
+        }
+    
 
-<h2>ListPartie</h2>
+</div>
+</div>
 

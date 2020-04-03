@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Memory.Models;
+using Memory.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -12,7 +13,7 @@ namespace Memory.Pages
    
     public class EditPartieModel : PageModel
     {
-        public  enum StateGame { INPROGRESS = 0, DONE = 1 };
+       
         [BindProperty(SupportsGet = true)]
         public string Player1 { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -32,20 +33,21 @@ namespace Memory.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-          
-
             if (!string.IsNullOrEmpty(Player1) && !string.IsNullOrEmpty(Player2))
             {
-                var PartieId = (from m in _context.Partie
-                              select m).Max(c => c.ID);
-                PartieId = PartieId + 1;
+                //var PartieId = (from m in _context.Partie
+                //              select m).Max(c => c.ID);
+            
+                //PartieId = PartieId + 1;
+
                 Partie.StateGame = StateGame.INPROGRESS.ToString();
                 Partie.NumberCards = NumberCards;
                 Partie.TournToPlay = Player1; // faire un random
                 Partie.CreateAt = DateTime.Now;
 
                _context.Partie.Add(Partie);
-              
+
+               var PartieId = Partie.ID;
 
                 ScorePartie.Player1 = Player1;
                 ScorePartie.Player2 = Player2;
@@ -63,7 +65,7 @@ namespace Memory.Pages
                     _context.Carte.Add(card);
                 }
                await _context.SaveChangesAsync();
-               return RedirectToPage("./mainGame","PartieInfo",new { PartieId });
+               return RedirectToPage("./mainGame","GameInfo",new { PartieId });
             }
             return Page();
         }

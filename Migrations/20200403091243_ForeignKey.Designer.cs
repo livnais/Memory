@@ -4,14 +4,16 @@ using Memory.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Memory.Migrations
 {
     [DbContext(typeof(MemoryContext))]
-    partial class MemoryContextModelSnapshot : ModelSnapshot
+    [Migration("20200403091243_ForeignKey")]
+    partial class ForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
