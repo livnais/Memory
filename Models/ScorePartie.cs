@@ -15,7 +15,6 @@ namespace Memory.Models
         public string Player2 { get; set; }
         public int ScorePlayer1 { get; set; }
         public int ScorePlayer2 { get; set; }
-
         [ForeignKey("Partie")]
         [Column(Order = 1)]
         public int PartieId { get; set; }

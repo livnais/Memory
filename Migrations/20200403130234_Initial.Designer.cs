@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Memory.Migrations
 {
     [DbContext(typeof(MemoryContext))]
-    [Migration("20200403090342_MaxLengthOnNames")]
-    partial class MaxLengthOnNames
+    [Migration("20200403130234_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

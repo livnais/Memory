@@ -35,10 +35,7 @@ namespace Memory.Pages
         {
             if (!string.IsNullOrEmpty(Player1) && !string.IsNullOrEmpty(Player2))
             {
-                //var PartieId = (from m in _context.Partie
-                //              select m).Max(c => c.ID);
-            
-                //PartieId = PartieId + 1;
+           
 
                 Partie.StateGame = StateGame.INPROGRESS.ToString();
                 Partie.NumberCards = NumberCards;
@@ -46,8 +43,18 @@ namespace Memory.Pages
                 Partie.CreateAt = DateTime.Now;
 
                _context.Partie.Add(Partie);
+                var dbSaveTask = _context.SaveChangesAsync();
+                await dbSaveTask;
+                //Attendre l'insertion des informations la partie 
+                //pour recuperer la valeur de la clé primaire, les lignes (en commentaire) ne fonctionnent pas si on a 0 partie d'enregistrer
+                // mais aussi si on supprime toute les parties (plus de partie dans la bdd) la clé primaire suivante n'est pas egal a 0 ou 1 mais à la derniere insertion
+                //var PartieId = (from m in _context.Partie select m).Max(c => c.ID);
+                //PartieId = PartieId + 1;
+                while (dbSaveTask.Result == 0)
+                {
 
-               var PartieId = Partie.ID;
+                }
+                var PartieId = Partie.ID;
 
                 ScorePartie.Player1 = Player1;
                 ScorePartie.Player2 = Player2;

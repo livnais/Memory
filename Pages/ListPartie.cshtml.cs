@@ -20,8 +20,7 @@ namespace Memory.Pages
 
         public IList<Partie> Partie { get; set; }
         public Partie PartieDelete { get; set; }
-        public ScorePartie ScorePartieDelete { get; set; }
-        public IList<Carte> CartesDelete { get; set; }
+    
 
 
         public async Task OnGetAsync()
@@ -42,16 +41,11 @@ namespace Memory.Pages
             else if (actionType == 0)
             {
                 PartieDelete = await _context.Partie.FindAsync(PartieId);
-                ScorePartieDelete = await _context.ScorePartie.FirstOrDefaultAsync(m=>m.PartieId==PartieId);
-                CartesDelete = await _context.Carte.Where(m => m.PartieId == PartieId).ToListAsync();
-                if (PartieDelete != null && ScorePartieDelete!=null && CartesDelete !=null)
+              
+                if (PartieDelete != null )
                 {
-                    foreach(Carte carte in CartesDelete)
-                    {
-                        _context.Carte.Remove(carte);
-                    }
+                   
                     _context.Partie.Remove(PartieDelete);
-                    _context.ScorePartie.Remove(ScorePartieDelete);
                     await _context.SaveChangesAsync();
                 }
             }

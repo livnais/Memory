@@ -8,21 +8,7 @@ namespace Memory.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Carte",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Position = table.Column<int>(nullable: false),
-                    Image = table.Column<string>(nullable: true),
-                    FindBy = table.Column<string>(nullable: true),
-                    PartieId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Carte", x => x.ID);
-                });
+   
 
             migrationBuilder.CreateTable(
                 name: "Partie",
@@ -40,6 +26,28 @@ namespace Memory.Migrations
                     table.PrimaryKey("PK_Partie", x => x.ID);
                 });
 
+
+            migrationBuilder.CreateTable(
+       name: "Carte",
+       columns: table => new
+       {
+           ID = table.Column<int>(nullable: false)
+               .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+           Image = table.Column<string>(nullable: true),
+           FindBy = table.Column<string>(nullable: true),
+           PartieId = table.Column<int>(nullable: false)
+       },
+       constraints: table =>
+       {
+           table.PrimaryKey("PK_Carte", x => x.ID);
+           table.ForeignKey(
+                  name: "FK_Carte_Partie_ID",
+                  column: x => x.PartieId,
+                  principalTable: "Partie",
+                  principalColumn: "ID",
+                  onDelete: ReferentialAction.Cascade);
+       });
+
             migrationBuilder.CreateTable(
                 name: "ScorePartie",
                 columns: table => new
@@ -56,16 +64,24 @@ namespace Memory.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ScorePartie", x => x.ID);
+                    table.ForeignKey(
+                    name: "FK_Score_Partie_ID",
+                    column: x => x.PartieId,
+                    principalTable: "Partie",
+                    principalColumn: "ID",
+                    onDelete: ReferentialAction.Cascade);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Carte");
+      
 
             migrationBuilder.DropTable(
                 name: "Partie");
+
+            migrationBuilder.DropTable(
+          name: "Carte");
 
             migrationBuilder.DropTable(
                 name: "ScorePartie");
