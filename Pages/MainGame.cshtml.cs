@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Memory.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 
 namespace Memory.Pages
@@ -48,10 +49,6 @@ namespace Memory.Pages
             Carte = await _context.Carte.Where(m => m.PartieId == PartieId).ToListAsync();
            
         }
-        public ActionResult MyNextAction()
-        {
-            return Page();
-        }
 
         public async Task<IActionResult> OnGetGameInfo(int PartieId)
         {
@@ -67,10 +64,19 @@ namespace Memory.Pages
 
             return Page();
         }
-        [HttpPost]
-        public ActionResult RunAction(string option1)
+        public IActionResult OnGetPartial()
         {
-            return null;
+            List<string> countries = new List<string>();
+            countries.Add("USA");
+            countries.Add("UK");
+            countries.Add("India");
+
+            return new PartialViewResult
+            {
+                ViewName = "_GamePartial",
+                ViewData = new ViewDataDictionary
+        <List<string>>(ViewData, countries)
+            };
         }
 
     }

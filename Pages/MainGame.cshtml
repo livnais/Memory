@@ -8,47 +8,63 @@
 <div>
     <span class="title-memory">@ViewData["Title"]</span>
 
-<div id="refreshGame">
-    <div class="container-game-players">
-        <div>
-            <img width="30px" src="~/images/playerActif.svg" />
-            <span>  @Html.DisplayFor(model => model.ScorePartie.Player1)</span>
-            <span>0 point(s)</span>
-        </div>
-        <div>
-            <img width="30px" src="~/images/playerNotActif.svg" />
-            <span> @Html.DisplayFor(model => model.ScorePartie.Player2)</span>
-            <span>0 point(s)</span>
-        </div>
-    </div>
-    <div class="container-game-cards">
-        @foreach (var item in Model.Carte)
-        {
-            bool isSelected = item.ID == Model.idCard1 || item.ID == Model.idCard2 ? true : false;
-            showVerif = @Model.idCard1 != 0 && @Model.idCard2 != 0 ? true : false;
-            string image = isSelected ? item.Image : "card.svg";
-            string isShow = isSelected || showVerif ? "none" : "auto";
-
-            <div id="@item.ID" class="card">
-                <a style="pointer-events:@isShow" asp-route-id="@item.ID" asp-route-idCardSelected1="@Model.idCard1">
-                    <img width="50px"  src="~/images/@image" />
-                </a>
+    <div id="refreshGame">
+        <div class="container-game-players">
+            <div>
+                <img width="30px" src="~/images/playerActif.svg" />
+                <span>  @Html.DisplayFor(model => model.ScorePartie.Player1)</span>
+                <span>0 point(s)</span>
             </div>
-        }
-</div>
-    </div>
-    @if (showVerif)
-    {
-        <script type="text/javascript">
+            <div>
+                <img width="30px" src="~/images/playerNotActif.svg" />
+                <span> @Html.DisplayFor(model => model.ScorePartie.Player2)</span>
+                <span>0 point(s)</span>
+            </div>
+        </div>
+        <div class="container-game-cards">
+            @foreach (var item in Model.Carte)
+            {
+                bool isSelected = item.ID == Model.idCard1 || item.ID == Model.idCard2 ? true : false;
+                showVerif = @Model.idCard1 != 0 && @Model.idCard2 != 0 ? true : false;
+                string image = isSelected ? item.Image : "card.svg";
+                string isShow = isSelected || showVerif ? "none" : "auto";
+
+                <div id="@item.ID" class="card">
+                    <a style="pointer-events:@isShow" asp-route-id="@item.ID" asp-route-idCardSelected1="@Model.idCard1">
+                        <img width="50px" src="~/images/@image" />
+                    </a>
+                </div>
+            }
+        </div>
+        @if (showVerif)
+        {
+            <script type="text/javascript">
             function showAlert() {
                 setTimeout(function () {
-
                     alert("Verifiation des cartes id : "+@Model.idCard1+" / id : "+@Model.idCard2); }, 10000);
             }
-          
+
             showAlert();
-        </script>
-    }
+            </script>
+        }
+
+    </div>
+    <button type="button" id="button1">Load Partial View</button>
+
+    <div id="div1"></div>
 
 </div>
 
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#button1").click(function () {
+                alert("Test");
+                $("#div1").load("/Index?handler=Partial");
+            });
+
+        });
+
+    </script>
+}

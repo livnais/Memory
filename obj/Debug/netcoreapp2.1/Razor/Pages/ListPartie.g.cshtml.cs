@@ -110,12 +110,12 @@ using Memory;
             WriteLiteral("</span>\r\n                        <span class=\"item-game-info-name\">Theo contre Martin</span>\r\n                    </div>\r\n                    ");
             EndContext();
             BeginContext(761, 435, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ad0a5d485da49eba13e44fcf0cb97a3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c2a0452db5b44ac9297e3437ef7c2fd", async() => {
                 BeginContext(781, 85, true);
                 WriteLiteral("\r\n                        <div class=\"item-game-input\">\r\n                            ");
                 EndContext();
                 BeginContext(866, 120, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e9c893b5466e4139ba0eb2c18dbbc2ba", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3f732358eee243959d6d848b55c830e6", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();
@@ -154,7 +154,7 @@ using Memory;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(1016, 119, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8c70e2c745c94fd6b949dd4bd93e4074", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a530feeb6c37440eac5dd749a7c30df9", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();
