@@ -45,3 +45,4 @@ C:\Users\devapp\source\repos\Memory\obj\Debug\netcoreapp2.1\Razor\Pages\ScorePar
 C:\Users\devapp\source\repos\Memory\obj\Debug\netcoreapp2.1\Razor\Pages\ScorePartieDB\Details.g.cshtml.cs
 C:\Users\devapp\source\repos\Memory\obj\Debug\netcoreapp2.1\Razor\Pages\ScorePartieDB\Edit.g.cshtml.cs
 C:\Users\devapp\source\repos\Memory\obj\Debug\netcoreapp2.1\Razor\Pages\ScorePartieDB\Index.g.cshtml.cs
+C:\Users\devapp\source\repos\Memory\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Game\Default.g.cshtml.cs

@@ -41,6 +41,7 @@ namespace Memory.Pages
                 //idCard1 = 0;
                 //idCard2 = 0;
             }
+            //ne pas utiliser un navigateur privé (cookie non enregistré)
             int PartieId = int.Parse(Request.Cookies["PartieId"]);
             Partie = await _context.Partie.FirstOrDefaultAsync(m => m.ID == PartieId);
             ScorePartie = await _context.ScorePartie.FirstOrDefaultAsync(m => m.PartieId == PartieId);
@@ -65,6 +66,11 @@ namespace Memory.Pages
             Response.Cookies.Append("PartieId", PartieId.ToString());
 
             return Page();
+        }
+        [HttpPost]
+        public ActionResult RunAction(string option1)
+        {
+            return null;
         }
 
     }

@@ -52,5 +52,11 @@ namespace Memory.Pages
 
             return RedirectToPage("./listPartie");
         }
+   
+        public ActionResult ImageGalleryAction()
+        {
+            // do return your cshtml name here
+            return null;
+        }
     }
 }
