@@ -3,31 +3,39 @@
 @{
     ViewData["Title"] = "Game";
     bool showVerif = false;
+    string winner = Model.ScorePartie.Winner != null ? Model.ScorePartie.Winner+ " a gangé la partie de Mémory 🥳" : "";
 }
 
 <div>
     <span class="title-memory">@ViewData["Title"]</span>
-
-    <div id="refreshGame">
+    <div>
+      @winner
+    </div>
+    <div>
         <div class="container-game-players">
-            <div>
-                <img width="30px" src="~/images/playerActif.svg" />
-                <span>  @Html.DisplayFor(model => model.ScorePartie.Player1)</span>
-                <span>0 point(s)</span>
-            </div>
-            <div>
-                <img width="30px" src="~/images/playerNotActif.svg" />
-                <span> @Html.DisplayFor(model => model.ScorePartie.Player2)</span>
-                <span>0 point(s)</span>
-            </div>
+      
+
+                <div>
+                    <img width="30px" src="~/images/@Html.DisplayFor(model => model[@Model.ScorePartie.Player1])" />
+                    <span> @Model.ScorePartie.Player1</span>
+                    <span>@Model.ScorePartie.ScorePlayer1 point(s)</span>
+                </div>
+                <div>
+
+                    <img width="30px" src="~/images/@Html.DisplayFor(model => model[@Model.ScorePartie.Player2])" />
+                    <span>@Model.ScorePartie.Player2</span>
+                    <span>@Model.ScorePartie.ScorePlayer2 point(s)</span>
+                </div>
+                
+            
         </div>
         <div class="container-game-cards">
             @foreach (var item in Model.Carte)
             {
                 bool isSelected = item.ID == Model.idCard1 || item.ID == Model.idCard2 ? true : false;
                 showVerif = @Model.idCard1 != 0 && @Model.idCard2 != 0 ? true : false;
-                string image = isSelected ? item.Image : "card.svg";
-                string isShow = isSelected || showVerif ? "none" : "auto";
+                string image = isSelected || item.FindBy!=null ? item.Image : "card.svg";
+                string isShow = item.FindBy!=null || isSelected || showVerif   ? "none" : "auto";
 
                 <div id="@item.ID" class="card">
                     <a style="pointer-events:@isShow" asp-route-id="@item.ID" asp-route-idCardSelected1="@Model.idCard1">
@@ -38,33 +46,34 @@
         </div>
         @if (showVerif)
         {
-            <script type="text/javascript">
-            function showAlert() {
-                setTimeout(function () {
-                    alert("Verifiation des cartes id : "+@Model.idCard1+" / id : "+@Model.idCard2); }, 10000);
-            }
+            @section Scripts {
+                <script type="text/javascript">
+                    $(document).ready(function () {
 
-            showAlert();
-            </script>
+                        setTimeout(function () {
+                            $.ajax({
+                                type: "GET",
+                                url: '?handler=CheckCards',
+                                data: {id1:@Model.idCard1,id2:@Model.idCard2},
+                                success: function (msg) {
+                                   
+                                    window.history.replaceState({}, document.title, "/" + "MainGame");
+                                    location.reload(true);
+                                 
+                                   
+                                },
+                                error: function (error) {
+                                    alert(error);
+                                }
+                            });
+                        }, 1200);
+
+                    });
+
+                </script>
+            }
         }
 
     </div>
-    <button type="button" id="button1">Load Partial View</button>
-
-    <div id="div1"></div>
 
 </div>
-
-@section Scripts {
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#button1").click(function () {
-                alert("Test");
-                $("#div1").load("/Index?handler=Partial");
-            });
-
-        });
-
-    </script>
-}

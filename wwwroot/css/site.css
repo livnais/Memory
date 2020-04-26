@@ -104,10 +104,15 @@ margin:10px;
     padding: 15px 20px 10px 20px;
     background: #f3f3f3;
 }
-.item-game-info{
-   display:flex;
-   flex-direction:column;
-   text-align:left;
+.item-game-score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item-game-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 item-game-input{
      display:flex;
@@ -119,6 +124,14 @@ item-game-input{
 .item-game-info-name{
     font-weight:bold;
     font-size:15px;
+}
+.item-game-info-count {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.loser-div {
+    color: #808080;
 }
 
 /* Hide/rearrange for smaller screens */

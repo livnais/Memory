@@ -39,7 +39,7 @@ namespace Memory.Pages
 
                 Partie.StateGame = StateGame.INPROGRESS.ToString();
                 Partie.NumberCards = NumberCards;
-                Partie.TournToPlay = Player1; // faire un random
+                Partie.TournToPlay = Player1; 
                 Partie.CreateAt = DateTime.Now;
 
                _context.Partie.Add(Partie);
@@ -82,8 +82,6 @@ namespace Memory.Pages
            List<Carte> ListCard = new List<Carte>();
            for(int i = 0; i < NumberC/2; i++)
             {
-                //je suis obliger de créer de variables carte car au moment de l'insertion en bdd le systeme va voir qu'il y a la meme reference (je suppose)
-                //et donc le systeme va ajouter qu'une carte
                 Carte Carte1 = new Carte();
                 Carte Carte2 = new Carte();
                 string ImageName = (i + 1).ToString()+".svg";

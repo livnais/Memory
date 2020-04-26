@@ -1,8 +1,95 @@
 ﻿@page
 @model Memory.Pages.ListScoreModel
 @{
-    ViewData["Title"] = "ListScore";
+    ViewData["Title"] = "Scores";
 }
 
-<h2>ListScore</h2>
+<div>
+    <span class="title-memory">@ViewData["Title"]</span>
 
+    <div class="content-item-game">
+        @if (Model.Parties.Count == 0)
+        {
+            <h3>Il n'y a aucune partie en cours</h3>
+        }
+        else
+        {
+            @foreach (var item in Model.Parties)
+            {
+                <div class="item-game">
+                    <div class="item-game-info">
+                        <span class="item-game-info-create">Créé le @item.CreateAt</span>
+                        <span class="item-game-info-name">
+                            @Html.DisplayFor(m => m[@item.ID].Player1) contre @Html.DisplayFor(m => m[@item.ID].Player2)
+                        </span>
+                    </div>
+                    <div class="item-game-score">
+                        @{
+                            string style = "loser-div";
+                            string winnerPlayer;
+                            string winnerPlayerScore;
+                            string loserPlayer;
+                            string loserPlayerScore;
+
+
+                            if (Model[item.ID].ScorePlayer1 == Model[item.ID].ScorePlayer2)
+                            {
+                                winnerPlayer = Model[item.ID].Player1;
+                                winnerPlayerScore = Model[item.ID].ScorePlayer1.ToString();
+                                loserPlayer = Model[item.ID].Player2;
+                                loserPlayerScore = Model[item.ID].ScorePlayer2.ToString();;
+
+                                style = "";
+                            }
+                            else if (Model[item.ID].ScorePlayer1 < Model[item.ID].ScorePlayer2)
+                            {
+                                winnerPlayer = Model[item.ID].Player2;
+                                winnerPlayerScore = Model[item.ID].ScorePlayer2.ToString();
+                                loserPlayer = Model[item.ID].Player1;
+                                loserPlayerScore = Model[item.ID].ScorePlayer1.ToString(); ;
+
+                            }
+                            else
+                            {
+                                winnerPlayer = Model[item.ID].Player1;
+                                winnerPlayerScore = Model[item.ID].ScorePlayer1.ToString();
+                                loserPlayer = Model[item.ID].Player2;
+                                loserPlayerScore = Model[item.ID].ScorePlayer2.ToString(); ;
+
+                            }
+
+                            <div class="item-game-info" style="margin-right:10px;">
+
+                                <span class="item-game-info-name">
+                                 Gagnant : @winnerPlayer
+                                </span>
+                                <span class="item-game-info-name @style">
+                                 Perdant : @loserPlayer
+                                </span>
+                            </div>
+                            <div class="item-game-info">
+                                <span class="item-game-info-name">
+                                    @winnerPlayerScore
+                                </span>
+                                <span class="item-game-info-name @style">
+                                    @loserPlayerScore
+                                </span>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        <span class="item-game-info-count" style="text-align:center;">
+                            @item.NumberCards Cartes
+                        </span>
+                    </div>
+
+                    <form method="post">
+                        <div class="item-game-input">
+                            <input type="submit" asp-route-PartieId="@item.ID" class="btn btn-danger" value="Supprimer" />
+                        </div>
+                    </form>
+                </div>
+            }
+        }
+
+    </div>

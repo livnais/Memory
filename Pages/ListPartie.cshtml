@@ -3,9 +3,13 @@
 @{
     ViewData["Title"] = "Partie en cours";
 }
+
+
+
 <div>
     <span class="title-memory">@ViewData["Title"]</span>
-    <div class="content-item-game" id="myImageGallery" onload="reloadGallery()">
+
+    <div class="content-item-game">
         @if (Model.Partie.Count == 0)
         {
             <h3>Il n'y a aucune partie en cours</h3>
@@ -17,8 +21,11 @@
                 <div class="item-game">
                     <div class="item-game-info">
                         <span class="item-game-info-create">Créé le @item.CreateAt</span>
-                        <span class="item-game-info-name">Theo contre Martin</span>
+                        <span class="item-game-info-name">
+                            @Html.DisplayFor(m => m[@item.ID])
+                        </span>
                     </div>
+
                     <form method="post">
                         <div class="item-game-input">
                             <input type="submit" asp-route-PartieId="@item.ID" asp-route-actionType="1" class="btn btn-primary" value="Reprendre" />
@@ -31,10 +38,7 @@
 
     </div>
 
+
 </div>
 
-<script>
-    function reloadGallery() {
-        $('#myImageGallery').load("ImageGalleryAction");
-    }
-</script>
+

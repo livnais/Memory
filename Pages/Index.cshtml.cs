@@ -10,11 +10,15 @@ namespace Memory.Pages
 {
     public class IndexModel : PageModel
     {
-       
+        [BindProperty]
+        public string Name { get; set; }
         public void OnGet()
         {
       
         }
+  
 
+   
     }
+
 }
